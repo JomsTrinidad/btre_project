@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',    
     'pages.apps.PagesConfig', #called from pages app using a class called: PagesConfig with a parameted called 'pages'
     'listings.apps.ListingsConfig', 
     'realtors.apps.RealtorsConfig',     
@@ -124,8 +125,14 @@ STATICFILES_DIRS = [
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
-    # 'django.contrib.staticfiles.finders.AppDirectoriesFinder',  # <-- leave this out to ignore app-level static
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder', 
 ]
+
+# Media Folder Settings
+
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
